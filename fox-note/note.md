@@ -81,5 +81,41 @@ json 格式文件，例如下面的一个配置：
 -`"tabWidth": 2`: 表示 tab 用 2 个空格替代
 -`"useTabs": false`: 表示不适用 tab
 -`"singleQuote": true`: 表示使用单引号
--`"semi": false`: 表示不自动添加多余是分号
+-`"semi": false`: 表示不自动添加多余的分号
 -`"trailingComma": "none`: 表示不自动添加多余的逗号
+
+### postcss.config.js
+
+postcss 的配置文件。PostCss 是一个 CSS 处理工具。不过从 package.json 并没有看到有安装 postcss，暂不分析其作用。
+
+### babel.config.js
+
+参考:
+
+- [关于vue-cli3的浏览器兼容性](https://blog.csdn.net/qq_34551390/article/details/102511806) 。
+- [babel详解（六）:options](https://blog.liuyunzhuge.com/2019/10/11/babel%E8%AF%A6%E8%A7%A3%EF%BC%88%E5%85%AD%EF%BC%89-options/)
+
+在 babel.config.js 中，sourceType 的选项如下：
+
+- `script`: 使用 ECMAScript 语法解析，不允许使用 import/export 语句，文件为非严格模式
+- `module`: 使用 ECMAScript 语法解析，文件为严格模式，允许使用 import/export 语句
+- `unambiguous`: 当存在 import/export 时，使用 module 模式，否则使用 script 模式
+
+### .env 文件
+
+配置环境变量，参考：[模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html)。
+
+- `.env.production`: 用于 `mode = production` 的情况
+- `.env.development`: 用于 `mode = development` 的情况
+
+### .editorconfig 文件
+
+配置编辑器的设置，例如：
+```
+[*.{js,jsx,ts,tsx,vue}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
+表示对 js、jsx、ts、tsx、vue 结尾的文件，执行：2空格缩进，去掉行最后的空白符，如果文件最后不是一个空行(全是空白符也视为空行)，则插入一个空行。
