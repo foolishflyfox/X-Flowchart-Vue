@@ -13,6 +13,7 @@ module.exports = {
   outputDir: 'docs',
   // 静态资源目录
   assetsDir: '',
+  lintOnSave: false,
   productionSourceMap: false,
   css: {
     loaderOptions: {
