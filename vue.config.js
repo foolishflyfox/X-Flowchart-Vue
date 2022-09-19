@@ -14,6 +14,7 @@ module.exports = {
   // 静态资源目录
   assetsDir: '',
   lintOnSave: false,
+  // 在生成环境中不需要调试定位源码
   productionSourceMap: false,
   css: {
     loaderOptions: {
