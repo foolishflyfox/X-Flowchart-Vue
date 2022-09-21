@@ -13,11 +13,11 @@ import components from './global/components'
 import config from './config'
 import './assets/styles/main.less'
 
+// 用于检测是否点击在某个元素外面的库
 import vClickOutside from 'v-click-outside'
 
 export default function (options) {
   const { el, props } = options
-
   if (props) {
     // 合并配置
     ['system', 'storage', 'infoPanel'].forEach(key => {
@@ -62,6 +62,7 @@ export default function (options) {
   // 注册指令
   Vue.use(vClickOutside)
 
+  // new Vue({el: '#app', render: h => h(Editor)}) 等价于 new Vue({render: h => h(Editor)}).mount('#app)
   if (el) {
     return new Vue({
       el,
